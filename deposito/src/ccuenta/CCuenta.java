@@ -10,6 +10,30 @@ public class CCuenta {
     public CCuenta() {
     }
 
+    public CCuenta(String nom, String cue, double sal, double tipo) {
+        nombre = nom;
+        cuenta = cue;
+        saldo = sal;
+        tipoInterés = tipo;
+    }
+
+    //Métodos setter
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCuenta(String cuenta) {
+        this.cuenta = cuenta;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public void setTipoInteres(double tipoInterés) {
+        this.tipoInterés = tipoInterés;
+    }
+
     public void operativa_cuenta(String nom, String cue, double sal, double tipo) {
         CCuenta cuenta1;
         double saldoActual;
@@ -30,12 +54,6 @@ public class CCuenta {
             System.out.print("Fallo al ingresar");
         }
 
-    }
-
-    public CCuenta(String nom, String cue, double sal, double tipo) {
-        nombre = nom;
-        cuenta = cue;
-        saldo = sal;
     }
 
     public double estado() {
