@@ -34,6 +34,23 @@ public class CCuenta {
         this.tipoInterés = tipoInterés;
     }
 
+    //Metodos getter
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCuenta() {
+        return cuenta;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public double getTipoInteres() {
+        return tipoInterés;
+    }
+
     public void operativa_cuenta(String nom, String cue, double sal, double tipo) {
         CCuenta cuenta1;
         double saldoActual;
@@ -57,14 +74,17 @@ public class CCuenta {
     }
 
     public double estado() {
-        return saldo;
+        return getSaldo();
     }
 
     public void ingresar(double cantidad) throws Exception {
         if (cantidad < 0) {
             throw new Exception("No se puede ingresar una cantidad negativa");
         }
-        saldo = saldo + cantidad;
+        double saldo;
+        saldo = getSaldo();
+
+        saldo += cantidad;
     }
 
     public void retirar(double cantidad) throws Exception {
@@ -74,6 +94,9 @@ public class CCuenta {
         if (estado() < cantidad) {
             throw new Exception("No se hay suficiente saldo");
         }
-        saldo = saldo - cantidad;
+        double saldo;
+        saldo = getSaldo();
+
+        saldo -= cantidad;
     }
 }
